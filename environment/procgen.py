@@ -1,7 +1,7 @@
+from __future__ import annotations
 import random
 from typing import Tuple, Iterator, List, TYPE_CHECKING
 import tcod
-from __future__ import annotations
 
 from .game_map import GameMap
 from . import tile_types
@@ -68,7 +68,7 @@ def tunnel_between(
         yield x, y
     
 def generate_dungeon(
-    max_room: int,
+    max_rooms: int,
     room_min_size: int,
     room_max_size: int,
     map_width: int,
@@ -83,7 +83,7 @@ def generate_dungeon(
 
     rooms: List[RectangularRoom] = []
 
-    for r in range(max_room):
+    for r in range(max_rooms):
         room_width = random.randint(room_min_size, room_max_size)
         room_height = random.randint(room_min_size, room_max_size)
 
